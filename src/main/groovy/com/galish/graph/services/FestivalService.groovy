@@ -26,4 +26,9 @@ class FestivalService {
         festivalGraphRepository.save(festival)
     }
 
+    def deleteFestival(Festival festival){
+        log.info "Delete festival ${festival.name}"
+        festivalGraphRepository.delete(festival)
+    }
+
 }

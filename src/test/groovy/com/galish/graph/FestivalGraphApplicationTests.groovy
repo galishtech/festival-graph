@@ -46,4 +46,18 @@ class FestivalGraphApplicationTests {
 
 	}
 
+	@Test
+	void deleteFestivalTest(){
+
+		//set up data
+		Festival f = festivalService.createFestival(new Festival(name:FESTIVAL_NAME))
+		assert  f != null
+		assert f.name == FESTIVAL_NAME
+
+		//test the delete
+		festivalService.deleteFestival(festivalGraphRepository.findOneByName(FESTIVAL_NAME))
+		assert festivalGraphRepository.findOneByName(FESTIVAL_NAME) == null
+	}
+
+
 }
