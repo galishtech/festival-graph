@@ -7,17 +7,12 @@ import org.neo4j.ogm.annotation.Relationship
 /**
  * Created by kenobrien76 on 01/11/2016.
  */
-@NodeEntity(label="festival")
-class Festival {
+@NodeEntity(label="lineUp")
+class LineUp {
     @GraphId
     Long id
-    String name
-    @Relationship(type="LOCATED_IN", direction = Relationship.OUTGOING)
-    GeoFence fence
-
+    @Relationship(type = "FOR", direction = Relationship.OUTGOING)
+    Festival festival
     @Relationship(type = "CONTAINS", direction = Relationship.OUTGOING)
-    Set<Stage> stages
-    @Relationship(type="HAS_A", direction = Relationship.OUTGOING)
-    LineUp lineUp
-
+    Set<Act> acts
 }
