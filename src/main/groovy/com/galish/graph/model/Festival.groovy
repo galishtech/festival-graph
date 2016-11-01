@@ -12,12 +12,7 @@ class Festival {
     @GraphId
     Long id
     String name
-    @Relationship(type="LOCATED_IN", direction = Relationship.OUTGOING)
-    GeoFence fence
-
-    @Relationship(type = "CONTAINS", direction = Relationship.OUTGOING)
-    Set<Stage> stages
-    @Relationship(type="HAS_A", direction = Relationship.OUTGOING)
-    LineUp lineUp
+    @Relationship(type = "HAS", direction = Relationship.OUTGOING)
+    Set<FestivalInstance> festivalInstances
 
 }

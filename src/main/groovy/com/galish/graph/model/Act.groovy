@@ -14,5 +14,7 @@ class Act {
     String name
     @Relationship(type = "GIVES_A", direction = Relationship.OUTGOING)
     Set<Performance> performances
+    @Relationship(type = "PART_OF", direction = Relationship.OUTGOING)
+    LineUp lineUp
 
 }
